@@ -1,0 +1,20 @@
+from tkinter import *
+import random as r
+w = Tk()
+l1 = Label(w, text="Прізвище:", font="Arial 18")
+l2 = Label(w, text="Ім'я:", font="Arial 18")
+l3 = Label(w, text="Номер телефону:", font="Arial 18")
+e1 = Entry(w, font="Arial 18")
+e2 = Entry(w, font="Arial 18")
+e3 = Entry(w, font="Arial 18")
+def addUser():
+    l4.config(text=l4["text"]+"\n"+e1.get()+" "+e2.get()+" "+e3.get())
+    e1.delete(0, END); e2.delete(0, END); e3.delete(0, END)
+b1 = Button(w, text="Додати користувача", command=addUser, font="Arial 18", width=32)
+l4 = Label(w, text="Користувачі:", font="Arial 18", width=30, anchor=W)
+l1.grid(row=0, column=0, sticky=E); e1.grid(row=0, column=1)
+l2.grid(row=1, column=0, sticky=E); e2.grid(row=1, column=1)
+l3.grid(row=2, column=0, sticky=E); e3.grid(row=2, column=1)
+b1.grid(row=3, column=0, columnspan=2)
+l4.grid(row=0, column=2, rowspan=15, sticky=NW)
+w.mainloop()
